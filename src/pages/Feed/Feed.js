@@ -22,7 +22,7 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:8080/feed/userstatus', {
+    fetch('http://localhost:8080/auth/userstatus', {
       headers: {
         Authorization: 'bearer ' + this.props.token
       }
@@ -82,7 +82,7 @@ class Feed extends Component {
 
   statusUpdateHandler = event => {
     event.preventDefault();
-    let url = 'http://localhost:8080/feed/setstatus';
+    let url = 'http://localhost:8080/auth/setstatus';
     let method = 'PUT';
     console.log(this.state.status);
 
